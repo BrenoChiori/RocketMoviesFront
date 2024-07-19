@@ -64,9 +64,7 @@ export const SectionMain = styled.section`
             margin-top: 30px;
             display: flex;
             flex-direction: row;
-
             gap: 10px;
-            color: ${({ theme }) => theme.COLORS.PRINCIPAL};
         }
     }
     

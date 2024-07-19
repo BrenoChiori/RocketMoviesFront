@@ -1,8 +1,9 @@
-import { FiArrowLeft, FiStar } from "react-icons/fi"
+import { FiArrowLeft } from "react-icons/fi"
 import { Container, Section, SectionMain, DataUser, TagSections, Tags, TextSection } from "./styles"
 import { Link } from "react-router-dom"
 
-import {Header} from '../../components/Header'
+import { Header } from '../../components/Header'
+import { Rating } from "../../components/Rating"
 
 export function Details() {
   return(
@@ -19,11 +20,7 @@ export function Details() {
             <div>
               <h1>Interestellar</h1>
               <span>
-                <FiStar />
-                <FiStar />
-                <FiStar />
-                <FiStar />
-                <FiStar />
+                <Rating rating={2}/>
               </span>
             </div>
 
