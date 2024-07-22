@@ -20,6 +20,13 @@ export const Container = styled.div`
         &:placeholder {
             color: ${({ theme }) => theme.COLORS.GRAY_100};
         }
+
+        &:-webkit-outer-spin-button,
+        &:-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+        
     }
 
     > svg {

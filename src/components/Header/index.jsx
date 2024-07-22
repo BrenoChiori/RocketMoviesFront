@@ -1,30 +1,40 @@
 import { FiSearch } from "react-icons/fi";
-import { Container, Title, Search, Profile } from "./styles";
+import { api } from "../../services/api";
+
+import { useAuth } from "../../hooks/auth";
+
 import { Input } from "../Input"
+import { Container, Title, Search, Profile, ProfileButton } from "./styles";
 
 export function Header() {
+    const { signOut, user } = useAuth()
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
     return (
         <Container>
             <Title>Rocket Movies</Title>
-            
+
             <Search>
-                <Input 
+                <Input
                     placeholder="Pesquisar pelo título"
                     type="text"
                     icon={FiSearch}
                 />
             </Search>
-            
-            <Profile to="/profile">
+
+            <Profile>
                 <div>
-                    <strong>Breno Chiori</strong>
-                    <span>sair</span>
+                    <strong>{user.name}</strong>
+                    <button onClick={signOut}>sair</button>
                 </div>
-                <img
-                    src="https://github.com/BrenoChiori.png"
-                    alt="Foto do usuário"
-                />
+                <ProfileButton to="/profile">
+                    <img
+                        src={avatarUrl}
+                        alt={user.name}
+                    />
+                </ProfileButton>
+
             </Profile>
         </Container>
     )

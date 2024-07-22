@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 200px;
+    height: auto;
     background-color: rgba(255, 133, 155, 0.05);
     border-radius: 16px;
-    padding: 20px 30px;
+    padding: 32px;
     margin-bottom: 24px;
 
     > h1 {
@@ -31,15 +31,6 @@ export const Container = styled.div`
 
     > div {
         display: flex;
-        gap: 8px
+        gap: 6px;
     }
-`
-
-export const Tags = styled.a`
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_TAG};
-    border-radius: 8px;
-    height: 24px;
-    padding: 5px 16px;
-    font-size: 12px;
-    color: ${({ theme }) => theme.COLORS.WITHE};
 `

@@ -82,15 +82,7 @@ export const DataUser = styled.div`
 `
 
 export const TagSections = styled.div`
-    margin-top: 40px;
-`
-
-export const Tags = styled.a`
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_TAG};
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 12px;
-    color: ${({ theme }) => theme.COLORS.WITHE};
+    margin-top: 20px;
 `
 
 export const TextSection = styled.p`

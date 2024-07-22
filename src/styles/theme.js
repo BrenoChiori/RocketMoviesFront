@@ -9,7 +9,7 @@ export default {
       BACKGROUND_TAG: "#312E38",
   
       WHITE: "#F4EDE8",
-      PRINCIPAL: "#FF859B",
+      PRINCIPAL: "#f20000",
   
       GRAY_100: "#948F99",
       GRAY_200: "#CAC4CF",

@@ -1,21 +1,33 @@
-import { FiStar } from "react-icons/fi";
-import { Container, Tags } from "./styles";
-
+import { Container } from "./styles";
 import { Rating } from "../Rating";
+import { Tag } from "../Tags";
 
-export function Note() {
-    return(
-        <Container>
-            <h1>Interestellar</h1>
+export function Note({ data, ...rest }) {
+    const truncateDescription = (text, maxLength = 400) => {
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + '...';
+        }
+        return text;
+    };
+
+    return (
+        <Container {...rest}>
+            <h1>{data.title}</h1>
             <span>
-                < Rating rating={3} />
+                < Rating rating={data.rating} />
             </span>
-            <p>Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobr...</p>
-            <div>
-                <Tags>Ficão Cientifica</Tags>
-                <Tags>Ficão Cientifica</Tags>
-                <Tags>Ficão Cientifica</Tags>
-            </div>
+            <p>{truncateDescription(data.description)}</p>
+
+            {
+                data.tags &&
+                <div>
+                    {
+                        data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
+                    }
+                </div>
+            }
+
+
         </Container>
     )
 }

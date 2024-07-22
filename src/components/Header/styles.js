@@ -26,7 +26,16 @@ export const Search = styled.div`
     margin: 0 64px;
 `
 
-export const Profile = styled(Link)`
+export const ProfileButton = styled(Link)`
+    > img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+    }
+`
+
+
+export const Profile = styled.div`
     display: flex;
     align-items: center;
 
@@ -43,7 +52,9 @@ export const Profile = styled(Link)`
         line-height: 24px;
         direction: ltr;
 
-        span {
+        button {
+            border: none;
+            background: none;
             font-size: 14px;
             color: ${({ theme }) => theme.COLORS.GRAY_100};
             margin-left: auto;
